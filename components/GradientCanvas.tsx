@@ -20,6 +20,7 @@ const LayerRenderer: React.FC<{ layer: LayerConfig }> = ({ layer }) => {
   // Styles specifically for animating attributes
   const shapeStyle: React.CSSProperties = {
       fill: layer.color,
+      transformOrigin: 'center',
       transition: 'fill 3s ease-in-out, d 3s ease-in-out, transform 3s ease-in-out, rx 3s ease-in-out, ry 3s ease-in-out'
   };
 
@@ -47,7 +48,6 @@ const LayerRenderer: React.FC<{ layer: LayerConfig }> = ({ layer }) => {
         <path
           d={layer.pathData}
           transform={`translate(${layer.x}, ${layer.y}) scale(${layer.scaleX}, ${layer.scaleY}) rotate(${layer.rotation})`}
-          transform-origin="center"
           style={shapeStyle}
         />
       )}

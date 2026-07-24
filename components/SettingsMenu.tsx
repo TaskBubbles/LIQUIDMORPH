@@ -199,7 +199,7 @@ export const SettingsMenu: React.FC<SettingsMenuProps> = ({
 
                 {/* Color Palette */}
                 <div>
-                    <label className="text-[10px] uppercase text-slate-600 font-bold mb-2 block">Ingredient Color</label>
+                    <label className="text-[10px] uppercase text-slate-400 font-bold mb-2 block">Ingredient Color</label>
                     <div className="flex flex-wrap gap-1.5">
                         {INGREDIENTS.map(ing => (
                             <button
@@ -208,7 +208,7 @@ export const SettingsMenu: React.FC<SettingsMenuProps> = ({
                                 className={`w-5 h-5 rounded-full border transition-all ${
                                     activeLayer.color === ing.hex 
                                     ? 'border-white shadow-[0_0_8px_rgba(255,255,255,0.5)] scale-110' 
-                                    : 'border-transparent opacity-40 hover:opacity-100'
+                                    : 'border-transparent opacity-50 hover:opacity-100'
                                 }`}
                                 style={{ backgroundColor: ing.hex }}
                                 title={ing.name}
@@ -221,7 +221,7 @@ export const SettingsMenu: React.FC<SettingsMenuProps> = ({
 
                 {/* Dimensions & Position */}
                 <div>
-                     <label className="text-[10px] uppercase text-slate-600 font-bold mb-3 flex items-center gap-1">
+                     <label className="text-[10px] uppercase text-slate-400 font-bold mb-3 flex items-center gap-1">
                         <Move size={10} /> Position & Scale
                      </label>
                      <div className="grid grid-cols-2 gap-3 mb-3">
@@ -242,7 +242,7 @@ export const SettingsMenu: React.FC<SettingsMenuProps> = ({
 
                 {/* Blend Mode */}
                 <div>
-                    <label className="text-[10px] uppercase text-slate-600 font-bold mb-2 block">Blend Mode</label>
+                    <label className="text-[10px] uppercase text-slate-400 font-bold mb-2 block">Blend Mode</label>
                     <div className="relative">
                         <select
                             value={activeLayer.blendMode}

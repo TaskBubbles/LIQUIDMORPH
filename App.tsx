@@ -28,7 +28,7 @@ const App: React.FC = () => {
            viewMode: 'client',
            activeType: parsed.activeType || 'type1',
            selectedLayerId: parsed.selectedLayerId || null,
-           canvasBg: parsed.canvasBg || '#F5F5F7',
+           canvasBg: parsed.canvasBg || '#0B0F17',
            palette: parsed.palette || ['#FDADD8', '#E54C9F', '#FFF49B', '#FFE830'],
            isAnimated: parsed.isAnimated || false,
            configs: {
@@ -44,7 +44,7 @@ const App: React.FC = () => {
       viewMode: 'client',
       activeType: 'type1',
       selectedLayerId: INITIAL_TYPE_1.layers[0].id,
-      canvasBg: '#F5F5F7',
+      canvasBg: '#0B0F17',
       palette: ['#FDADD8', '#E54C9F', '#FFF49B', '#FFE830'],
       isAnimated: false,
       configs: {
@@ -158,7 +158,7 @@ const App: React.FC = () => {
             viewMode: appState.viewMode,
             activeType: 'type1',
             selectedLayerId: INITIAL_TYPE_1.layers[0].id,
-            canvasBg: '#F5F5F7',
+            canvasBg: '#0B0F17',
             palette: ['#FDADD8', '#E54C9F', '#FFF49B', '#FFE830'],
             isAnimated: false,
             configs: { type1: INITIAL_TYPE_1, type2: INITIAL_TYPE_2 },
@@ -175,7 +175,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative h-screen w-screen overflow-hidden font-sans text-slate-900">
+    <div className="relative h-screen w-screen overflow-hidden font-sans text-slate-100">
       
       {/* 1. Immersive Background Canvas */}
       <div 
@@ -196,13 +196,13 @@ const App: React.FC = () => {
 
       {/* 2. Top Navigation Pill */}
       <div className="absolute top-6 left-1/2 -translate-x-1/2 z-50">
-        <div className="flex bg-white/10 backdrop-blur-xl rounded-full shadow-lg border border-white/20 p-1.5">
+        <div className="flex bg-slate-900/80 backdrop-blur-xl rounded-full shadow-2xl border border-slate-700/60 p-1.5">
             <button
                 onClick={() => setAppState(prev => ({ ...prev, viewMode: 'client' }))}
                 className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wide transition-all ${
                     appState.viewMode === 'client' 
-                    ? 'bg-white text-slate-900 shadow-sm' 
-                    : 'text-slate-500 hover:text-slate-800 hover:bg-white/40'
+                    ? 'bg-slate-100 text-slate-950 shadow-md' 
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
                 }`}
             >
                 <Sparkles size={14} /> Shop
@@ -211,8 +211,8 @@ const App: React.FC = () => {
                 onClick={() => setAppState(prev => ({ ...prev, viewMode: 'settings' }))}
                 className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wide transition-all ${
                     appState.viewMode === 'settings' 
-                    ? 'bg-slate-900 text-white shadow-sm' 
-                    : 'text-slate-500 hover:text-slate-800 hover:bg-white/40'
+                    ? 'bg-slate-100 text-slate-950 shadow-md' 
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
                 }`}
             >
                 <Settings2 size={14} /> Studio
